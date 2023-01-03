@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import EducationBuilder from './components/EducationBuilder';
+import ExperienceBuilder from './components/ExperienceBuilder';
+import PersonalInfoBuilder from './components/PersonalInfoBuilder';
+import SkillsBuilder from './components/SkillsBuilder';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor() {
+      super();
+    }
+
+
+    render() {
+      return (
+          <div className="App">
+            <h1>CV Builder</h1>
+            <div className="builder">
+              <div className ="personal-info-form">
+                <h2>Enter Your Personal Information:</h2>
+                <PersonalInfoBuilder />
+              </div>
+              <div className ="education-info-form">
+                <h2>Enter Your Education Information:</h2>
+                <EducationBuilder />
+              </div>
+              <div className ="experience-info-form">
+                <h2>Enter Your Experience Information:</h2>
+                <ExperienceBuilder />
+              </div>
+              <div className ="skills-form">
+                <h2>Enter Your Skills:</h2>
+                <SkillsBuilder />
+              </div>
+            </div>
+          </div>
+      )
+    }
 }
 
 export default App;
