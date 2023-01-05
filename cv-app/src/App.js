@@ -3,6 +3,7 @@ import EducationBuilder from './components/EducationBuilder';
 import ExperienceBuilder from './components/ExperienceBuilder';
 import PersonalInfoBuilder from './components/PersonalInfoBuilder';
 import SkillsBuilder from './components/SkillsBuilder';
+import './App.css';
 
 class App extends Component {
     constructor() {
@@ -11,26 +12,23 @@ class App extends Component {
 
 
     render() {
+
       return (
           <div className="App">
-            <h1>CV Builder</h1>
-            <div className="builder">
-              <div className ="personal-info-form">
-                <h2>Enter Your Personal Information:</h2>
-                <PersonalInfoBuilder />
-              </div>
-              <div className ="education-info-form">
-                <h2>Enter Your Education Information:</h2>
-                <EducationBuilder />
-              </div>
-              <div className ="experience-info-form">
-                <h2>Enter Your Experience Information:</h2>
-                <ExperienceBuilder />
-              </div>
-              <div className ="skills-form">
-                <h2>Enter Your Skills:</h2>
-                <SkillsBuilder />
-              </div>
+            <div className="content">
+              <h1>CV Builder</h1>
+              <h2>Enter Your Personal Information:</h2>
+              <PersonalInfoBuilder />
+              <h2>Enter Your Education Information:</h2>
+              <EducationBuilder />
+              <h2>Enter Your Experience Information:</h2>
+              <ExperienceBuilder />
+              <h2>Enter Your Skills:</h2>
+              <SkillsBuilder />
+              <h1>CV</h1>
+              <h2>Education:</h2>
+              <h2>Experience:</h2>
+              <h2>Skills:</h2>
             </div>
           </div>
       )

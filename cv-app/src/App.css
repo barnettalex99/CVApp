@@ -1,7 +1,11 @@
 .App {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(15, 50px);
   text-align: center;
 }
 
 h1{
   color:blue;
 }
+
