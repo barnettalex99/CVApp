@@ -35,6 +35,7 @@ class ExperienceBuilder extends Component {
             descriptions: [],
 
           };
+          this.deleteIndex = this.deleteIndex.bind(this);
     }
 
     handleCompany = (e) => {
@@ -99,6 +100,21 @@ class ExperienceBuilder extends Component {
         });
       };
 
+      deleteIndex = (passedCompany, passedTitle, passedStart, passedEnd) => {
+        const resultCompanies = this.state.companies.filter(item => item !== passedCompany );
+        const resultTitles = this.state.titles.filter(item => item !== passedTitle);
+        const resultStarts = this.state.starts.filter(item => item !== passedStart );
+        const resultEnds = this.state.ends.filter(item => item !== passedEnd );
+        const resultDescriptions = this.state.descriptions.filter(item => item !== passedEnd );
+        this.setState({
+          companies: resultCompanies,
+          titles: resultTitles,
+          starts: resultStarts,
+          ends: resultEnds,
+          descriptions: resultDescriptions
+        });
+        }
+
 
 
   render() {
@@ -113,7 +129,7 @@ class ExperienceBuilder extends Component {
             <input type="text" placeholder="Description" onChange={this.handleDesc} value={description.text}></input>
             <button type="submit">Add</button>
         </form>
-        <ExperienceItems companies={companies} titles={titles} starts={starts} ends={ends} descriptions={descriptions}/>
+        <ExperienceItems companies={companies} titles={titles} starts={starts} ends={ends} descriptions={descriptions} deleteIndex={this.deleteIndex}/>
     </div>
     );
     }

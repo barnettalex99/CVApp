@@ -9,6 +9,7 @@ const SkillsItems = (props) => {
       {skills.map((skill) => {
         return ( <div key={skill.id}>
             <p>{skill.text}</p>
+            <button type="button" onClick={() => props.deleteSkill(skill.id)}>Delete</button>
             </div> );
       })}
     </div>

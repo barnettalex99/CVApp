@@ -29,6 +29,7 @@ class EducationBuilder extends Component {
               },
             ends: [],
           };
+          this.deleteIndex = this.deleteIndex.bind(this);
     }
 
     handleSchool = (e) => {
@@ -82,11 +83,23 @@ class EducationBuilder extends Component {
       };
 
 
+  deleteIndex = (passedSchool, passedDegree, passedStart, passedEnd) => {
+    const resultSchools = this.state.schools.filter(item => item !== passedSchool );
+    const resultDegrees = this.state.degrees.filter(item => item !== passedDegree );
+    const resultStarts = this.state.starts.filter(item => item !== passedStart );
+    const resultEnds = this.state.ends.filter(item => item !== passedEnd );
+    this.setState({
+      schools: resultSchools,
+      degrees: resultDegrees,
+      starts: resultStarts,
+      ends: resultEnds
+    });
+    }
 
   render() {
     const {school, schools, degree, degrees, start, starts, end, ends} = this.state;
     return ( 
-    <div>
+    <div className="education-form">
         <form onSubmit={this.onSubmit}>
             <input type="text" placeholder="School" onChange={this.handleSchool} value={school.text}></input>
             <input type="text" placeholder="Degree" onChange={this.handleDegree} value={degree.text}></input>
@@ -94,7 +107,7 @@ class EducationBuilder extends Component {
             <input type="text" placeholder="End Date" onChange={this.handleEnd} value={end.text}></input>
             <button type="submit">Add</button>
         </form>
-        <EducationItems schools={schools} degrees={degrees} starts={starts} ends={ends} />
+        <EducationItems schools={schools} degrees={degrees} starts={starts} ends={ends} deleteIndex={this.deleteIndex}/>
     </div>
     );
     }

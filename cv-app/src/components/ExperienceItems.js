@@ -11,6 +11,7 @@ const ExperienceItems = (props) => {
         <div className="start" key={uniqid()}>{props.starts[i]}</div>
         <div className="end" key={uniqid()}>{props.ends[i]} </div>
         <div className="description" key={uniqid()}>{props.descriptions[i]} </div>
+        <button type="button" onClick={() => props.deleteIndex(props.companies[i], props.titles[i], props.starts[i], props.ends[i], props.descriptions[i])}>Delete</button>
     </div>);
     items.push(experienceDiv);
   }

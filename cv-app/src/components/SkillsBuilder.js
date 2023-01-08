@@ -13,6 +13,8 @@ class SkillsBuilder extends Component {
             },
             skills: [],
           };
+
+          this.deleteSkill = this.deleteSkill.bind(this);
     }
     handleChange = (e) => {
         this.setState({
@@ -31,6 +33,13 @@ class SkillsBuilder extends Component {
       });
     };
 
+    deleteSkill = (passedId) => {
+      const result = this.state.skills.filter(el => el.id !== passedId);
+      this.setState({
+        skills: result
+      });
+     }
+
   render() {
     const { skill, skills } = this.state;
     return ( 
@@ -39,7 +48,7 @@ class SkillsBuilder extends Component {
             <input type="text" placeholder="Add Skill Here" onChange={this.handleChange} value={skill.text}></input>
             <button type="submit">Add</button>
         </form>
-        <SkillsItems skills={skills} />
+        <SkillsItems skills={skills} deleteSkill={this.deleteSkill}/>
     </div>
     );
     }

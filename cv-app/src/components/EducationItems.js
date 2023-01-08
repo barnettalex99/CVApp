@@ -11,6 +11,7 @@ const EducationItems = (props) => {
         <div className="title" key={uniqid()}>{props.degrees[i]} </div>
         <div className="start" key={uniqid()}>{props.starts[i]}</div>
         <div className="end" key={uniqid()}>{props.ends[i]} </div>
+        <button type="button" onClick={() => props.deleteIndex(props.schools[i], props.degrees[i], props.starts[i], props.ends[i])}>Delete</button>
     </div>);
     items.push(experienceDiv);
   }

@@ -16,10 +16,10 @@ class App extends Component {
       return (
           <div className="App">
             <div className="content">
-              <h1>CV Builder</h1>
-              <h2>Enter Your Personal Information:</h2>
+              <h1 className="app-title">CV Builder</h1>
+              <h2 className="personal-info-directions">Enter Your Personal Information:</h2>
               <PersonalInfoBuilder />
-              <h2>Enter Your Education Information:</h2>
+              <h2 className="education-info-directions">Enter Your Education Information:</h2>
               <EducationBuilder />
               <h2>Enter Your Experience Information:</h2>
               <ExperienceBuilder />
