@@ -1,4 +1,5 @@
 import React from "react";
+import SkillsFinal from "./SkillsFinal";
 
 
 const SkillsItems = (props) => {
@@ -12,6 +13,7 @@ const SkillsItems = (props) => {
             <button type="button" onClick={() => props.deleteSkill(skill.id)}>Delete</button>
             </div> );
       })}
+      <SkillsFinal skills={skills} />
     </div>
   );
 };

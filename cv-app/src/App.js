@@ -25,10 +25,6 @@ class App extends Component {
               <ExperienceBuilder />
               <h2>Enter Your Skills:</h2>
               <SkillsBuilder />
-              <h1>CV</h1>
-              <h2>Education:</h2>
-              <h2>Experience:</h2>
-              <h2>Skills:</h2>
             </div>
           </div>
       )
