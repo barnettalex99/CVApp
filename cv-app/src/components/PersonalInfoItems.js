@@ -1,4 +1,5 @@
 import React from "react";
+import PersonalInfoFinal from "./PersonalInfoFinal";
 
 const PersonalInfoItems = (props) => {
   const { allInfo } = props;
@@ -13,6 +14,7 @@ const PersonalInfoItems = (props) => {
       <div className="phone-number">
         <p>{allInfo[2]}</p>
       </div>
+      <PersonalInfoFinal allInfo={allInfo}/>
     </div>
   );
 };

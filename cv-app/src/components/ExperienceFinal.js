@@ -1,8 +1,8 @@
 import React from "react";
 import uniqid from "uniqid";
-import ExperienceFinal from "./ExperienceFinal";
+import ReactDOM from "react-dom";
 
-const ExperienceItems = (props) => {
+const ExperienceFinal = (props) => {
   let items = [];
   for (let i=0; i< props.companies.length; i++){
     const experienceDiv = 
@@ -12,17 +12,14 @@ const ExperienceItems = (props) => {
         <div className="start" key={uniqid()}>{props.starts[i]}</div>
         <div className="end" key={uniqid()}>{props.ends[i]} </div>
         <div className="description" key={uniqid()}>{props.descriptions[i]} </div>
-        <button type="button" onClick={() => props.deleteIndex(props.companies[i], props.titles[i], props.starts[i], props.ends[i], props.descriptions[i])}>Delete</button>
     </div>);
     items.push(experienceDiv);
   }
-    return (
-      <div className="all-experience">
-        <div>{items} </div>
-        <ExperienceFinal companies={props.companies} titles={props.titles} starts={props.starts} ends={props.ends} descriptions={props.descriptions}/>
-      </div>
+    return ReactDOM.createPortal(
+      <div className="all-experience">{items}</div>,
+      document.getElementById('experience-portal')
     );
   };
 
 
-export default ExperienceItems;
+export default ExperienceFinal;
