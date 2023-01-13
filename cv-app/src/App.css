@@ -1,0 +1,72 @@
+
+.content {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#portal-root {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 3px solid darkblue;
+}
+
+.all-education, .all-experience, .all-skills, .all-personal {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.educationDiv, .experienceDiv {
+    margin: 20px;
+}
+
+p {
+    margin: 0px;
+}
+
+button{
+    margin: 5px;
+}
+
+input {
+    margin: 5px;
+}
+
+.name, .email, .phone-number, .company, .title, .start, .end {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.final-skills {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    text-decoration: underline;
+    color: black;
+}
+
+.portal-header {
+    color: rgb(57, 115, 209);
+    text-decoration: underline;
+}
